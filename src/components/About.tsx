@@ -16,7 +16,7 @@ export default function About() {
                 I'm a data scientist turned founder, building technology that makes life simpler and more connected across Africa. My background in data science isn't just a credential; it's the engine behind my companies.
               </p>
               <p className="text-slate-700 leading-relaxed">
-                I use data to understand user needs, optimize platforms, and build smarter financial and event-discovery solutions.
+                I use data to understand user needs, optimize platforms, and build smarter solutions.
               </p>
             </div>
 
