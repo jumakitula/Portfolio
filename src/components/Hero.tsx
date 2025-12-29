@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import profilePic from '../profile_picture.jpg';
 
 export default function Hero() {
   return (
@@ -7,7 +8,8 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8 animate-fade-in">
+          <div className="mb-8 animate-fade-in flex items-center justify-center">
+            <img src={profilePic} alt="Profile Picture" className="w-20 h-20 rounded-full mr-4" />
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Juma Bakari
             </h1>
