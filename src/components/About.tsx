@@ -43,7 +43,7 @@ export default function About() {
                   <div>
                     <h4 className="font-bold text-slate-900 mb-2">My Edge</h4>
                     <p className="text-slate-700 text-sm">
-                      Using data to understand user needs, optimize platforms, and build  solutions.
+                      Using data to understand user needs, optimize platforms, and build smarter  solutions.
                     </p>
                   </div>
                 </div>
