@@ -7,14 +7,9 @@ export default function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
-          {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Juma Bakari
-          </h1>
-
-          {/* Profile Image BELOW name */}
-          <div className="flex justify-center mt-6 mb-6">
-            <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg">
+          {/* Profile Picture ON TOP */}
+          <div className="flex justify-center mb-6">
+            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-400 shadow-xl">
               <img
                 src={profilePic}
                 alt="Profile"
@@ -22,6 +17,11 @@ export default function Hero() {
               />
             </div>
           </div>
+
+          {/* Name */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            Juma Bakari
+          </h1>
 
           {/* Titles */}
           <p className="text-xl md:text-2xl text-slate-300 mb-2">
