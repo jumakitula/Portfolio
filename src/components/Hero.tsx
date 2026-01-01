@@ -54,8 +54,7 @@ export default function Hero() {
                 src="../assets/profile_picture.jpg"
                 alt="Juma Bakari"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.src = "../assets/profile_picture.jpg";
+               
                 }}
               />
             </div>
