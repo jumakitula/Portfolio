@@ -72,7 +72,7 @@ export default function Hero() {
 
           {/* 3. ROLE / TITLE - IMMEDIATELY BELOW NAME */}
           <div className="glass px-5 py-2 rounded-full text-center">
-            <span className="font-semibold">Data Analyst & Scientist</span>
+            <span className="font-semibold">Data Analyst & Scientist | Founder of eventzetu | Co-founder of ChiwawaPay | Founder of NeoAutomate Agents</span>
           </div>
 
           {/* 4. OTHER INFO (BIO) */}
@@ -80,7 +80,7 @@ export default function Hero() {
             <span className="text-cyan-400 font-medium">
               Turning data into solutions.
             </span>{" "}
-            I build technology that simplifies life and connects Africa.
+            I build technology that simplifies life and connects the world.
           </p>
 
           {/* 5. CONTACT BUTTONS - STACKED VERTICALLY */}
@@ -116,9 +116,9 @@ export default function Hero() {
 
           {/* 6. STATS - STACKED VERTICALLY */}
           <div className="flex flex-col gap-4 w-full">
-            <Stat icon={Award} label="Years Experience" value="5+" />
+            <Stat icon={Award} label="Years Experience" value="2+" />
             <Stat icon={Briefcase} label="Ventures Founded" value="3" />
-            <Stat icon={Users} label="Projects Completed" value="50+" />
+            <Stat icon={Users} label="Projects Completed" value="10+" />
           </div>
 
         </div>
