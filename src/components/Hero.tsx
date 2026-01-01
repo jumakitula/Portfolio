@@ -4,77 +4,80 @@ import profilePic from "../assets/profile_picture.jpg";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-
-          {/* 1. Profile Picture */}
-          <div className="flex justify-center mb-6">
-            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-400 shadow-xl">
-              <img
-                src={profilePic}
-                alt="Juma Bakari"
-                className="w-full h-full object-cover"
-              />
-            </div>
+    <section className="min-h-screen bg-gradient-to-b from-gray-900 to-slate-800 text-white py-12 md:py-20">
+      <div className="container mx-auto px-6">
+        {/* Profile Picture at the very top */}
+        <div className="flex justify-center mb-8 md:mb-12">
+          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-cyan-400 shadow-2xl shadow-cyan-500/30">
+            <img
+              src={profilePic}
+              alt="Juma Bakari"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://via.placeholder.com/224x224/1e293b/ffffff?text=JB";
+              }}
+            />
           </div>
+        </div>
 
-          {/* 2. Name */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+        {/* All content below the picture */}
+        <div className="max-w-3xl mx-auto">
+          {/* Name */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Juma Bakari
           </h1>
 
-          {/* 3. Titles (Role) */}
-          <p className="text-xl md:text-2xl text-slate-300 mb-2 font-medium">
-            Data Analyst & Scientist
+          {/* Title with location badge */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+            <p className="text-xl md:text-2xl text-gray-300 font-semibold">
+              Data Analyst & Scientist
+            </p>
+            <div className="flex items-center gap-2 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700">
+              <span className="text-lg">🇹🇿</span>
+              <span>Tanzania</span>
+            </div>
+          </div>
+
+          {/* Ventures */}
+          <p className="text-lg md:text-xl text-gray-400 text-center mb-8">
+            Founder of <span className="text-cyan-300">EventZetu</span> • 
+            Co-founder of <span className="text-cyan-300">ChiwawaPay</span> • 
+            Founder of <span className="text-cyan-300">NeoAutomate Agents</span>
           </p>
 
-          {/* 4. Founder of ... (Ventures) */}
-          <p className="text-lg md:text-xl text-slate-400 mb-8">
-            Founder of EventZetu | Co-founder of ChiwawaPay | Founder of NeoAutomate Agents
-          </p>
-
-          {/* 5. Description (Bio) */}
-          <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          {/* Bio */}
+          <p className="text-lg md:text-xl text-gray-300 text-center mb-12 leading-relaxed px-4">
             Turning data into solutions. I'm a data scientist turned founder, building technology that makes life simpler and more connected across Africa.
           </p>
 
-          {/* 6. Buttons (Contact) */}
+          {/* Contact Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {/* Email */}
             <a
               href="mailto:jumakitula0@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all shadow-lg"
+              className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               <Mail size={20} />
               Email Me
             </a>
-
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/juma-bakari-4712ab152"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition-all shadow-lg"
+              className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               <Linkedin size={20} />
               LinkedIn
             </a>
-
-            {/* WhatsApp - Keeping your custom link provided in snippet */}
             <a
               href="https://wa.me/255711813131"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-all shadow-lg"
+              className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               <MessageCircle size={20} />
               WhatsApp
             </a>
-          </div>
-
-          <div className="text-slate-500 text-sm tracking-widest uppercase">
-            Tanzania
           </div>
         </div>
       </div>
