@@ -55,7 +55,7 @@ export default function Hero() {
                 alt="Juma Bakari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/200";
+                  e.target.src = "../assets/profile_picture.jpg";
                 }}
               />
             </div>
