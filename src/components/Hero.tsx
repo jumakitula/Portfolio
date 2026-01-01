@@ -8,7 +8,11 @@ import {
   Briefcase,
   Users,
 } from "lucide-react";
-import profilePic from "../assets/profile_picture.jpg";
+
+/**
+ * Note: profilePic import removed to resolve compilation error.
+ * Using a placeholder or direct path to resolve asset issues.
+ */
 
 export default function Hero() {
   return (
@@ -38,72 +42,79 @@ export default function Hero() {
 
       <section className="min-h-screen bg-slate-900 text-white flex justify-center items-start py-16">
         
-        {/* 🔒 LOCKED VERTICAL COLUMN */}
-        <div className="w-full max-w-md flex flex-col items-center gap-6 px-6">
+        {/* 🔒 MAIN VERTICAL WRAPPER - STACKED TOP TO BOTTOM */}
+        <div className="w-full max-w-md flex flex-col items-center gap-8 px-6">
 
-          {/* PHOTO */}
-          <div className="relative flex flex-col items-center">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-cyan-400 float">
+          {/* 1. PHOTO */}
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-cyan-400 float bg-slate-800 flex items-center justify-center">
+              {/* Fallback image path used to prevent build failure */}
               <img
-                src={profilePic}
+                src="/dp.JPG" 
                 alt="Juma Bakari"
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/200";
+                }}
               />
             </div>
 
-            <div className="mt-3 glass px-4 py-2 rounded-full flex items-center gap-2">
+            <div className="mt-4 glass px-4 py-2 rounded-full flex items-center gap-2">
               <MapPin size={16} className="text-cyan-400" />
               <span className="text-sm text-cyan-300">Tanzania 🇹🇿</span>
             </div>
           </div>
 
-          {/* NAME */}
+          {/* 2. NAME - IMMEDIATELY BELOW PHOTO */}
           <h1 className="text-4xl font-bold text-center text-cyan-400">
             Juma Bakari
           </h1>
 
-          {/* TITLE */}
+          {/* 3. ROLE / TITLE - IMMEDIATELY BELOW NAME */}
           <div className="glass px-5 py-2 rounded-full text-center">
             <span className="font-semibold">Data Analyst & Scientist</span>
           </div>
 
-          {/* BIO */}
-          <p className="text-center text-gray-300 text-lg glass p-5 rounded-xl">
+          {/* 4. OTHER INFO (BIO) */}
+          <p className="text-center text-gray-300 text-lg glass p-5 rounded-xl w-full">
             <span className="text-cyan-400 font-medium">
               Turning data into solutions.
             </span>{" "}
             I build technology that simplifies life and connects Africa.
           </p>
 
-          {/* CONTACTS — STACKED */}
+          {/* 5. CONTACT BUTTONS - STACKED VERTICALLY */}
           <div className="flex flex-col gap-3 w-full">
             <a
               href="mailto:jumakitula0@gmail.com"
-              className="hover-lift glass flex items-center justify-center gap-2 py-3 rounded-xl"
+              className="hover-lift glass flex items-center justify-center gap-3 py-4 rounded-xl"
             >
-              <Mail size={18} /> Email Me
+              <Mail size={18} className="text-cyan-400" /> 
+              <span className="font-medium">Email Me</span>
             </a>
 
             <a
               href="https://www.linkedin.com/in/juma-bakari-4712ab152"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-lift glass flex items-center justify-center gap-2 py-3 rounded-xl"
+              className="hover-lift glass flex items-center justify-center gap-3 py-4 rounded-xl"
             >
-              <Linkedin size={18} /> LinkedIn
+              <Linkedin size={18} className="text-cyan-400" /> 
+              <span className="font-medium">LinkedIn</span>
             </a>
 
             <a
               href="https://wa.me/255711813131"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-lift glass flex items-center justify-center gap-2 py-3 rounded-xl"
+              className="hover-lift glass flex items-center justify-center gap-3 py-4 rounded-xl"
             >
-              <MessageCircle size={18} /> WhatsApp
+              <MessageCircle size={18} className="text-cyan-400" /> 
+              <span className="font-medium">WhatsApp</span>
             </a>
           </div>
 
-          {/* STATS — STACKED */}
+          {/* 6. STATS - STACKED VERTICALLY */}
           <div className="flex flex-col gap-4 w-full">
             <Stat icon={Award} label="Years Experience" value="5+" />
             <Stat icon={Briefcase} label="Ventures Founded" value="3" />
@@ -118,10 +129,10 @@ export default function Hero() {
 
 function Stat({ icon: Icon, value, label }) {
   return (
-    <div className="glass hover-lift rounded-xl py-4 text-center">
-      <Icon size={28} className="mx-auto text-cyan-400 mb-1" />
+    <div className="glass hover-lift rounded-xl py-5 text-center w-full">
+      <Icon size={28} className="mx-auto text-cyan-400 mb-2" />
       <div className="text-2xl font-bold text-cyan-400">{value}</div>
-      <div className="text-gray-400 text-sm">{label}</div>
+      <div className="text-gray-400 text-sm font-medium">{label}</div>
     </div>
   );
 }
