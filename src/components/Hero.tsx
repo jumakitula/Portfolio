@@ -13,7 +13,6 @@ import profilePic from "../assets/profile_picture.jpg";
 export default function Hero() {
   return (
     <>
-      {/* Inline CSS for animations and custom styles */}
       <style>
         {`
           @keyframes gradient-shift {
@@ -61,51 +60,45 @@ export default function Hero() {
 
           .hover-lift-custom:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
           }
         `}
       </style>
 
-      <section className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-800 to-gray-900 text-white py-20 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
+      <section className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-800 to-gray-900 text-white py-20">
+        <div className="container mx-auto px-6 flex flex-col items-center">
 
-          {/* PROFILE IMAGE */}
-          <div className="mb-10">
-            <div className="relative group flex flex-col items-center">
-              <div
-                className="absolute -inset-4 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity"
-                style={{
-                  background:
-                    "linear-gradient(45deg, #22d3ee, #3b82f6, #22d3ee)",
-                }}
-              ></div>
+          {/* PROFILE */}
+          <div className="flex flex-col items-center mb-10">
+            <div className="relative group">
+              <div className="absolute -inset-4 rounded-full blur-xl opacity-30 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
 
-              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-cyan-400 shadow-2xl animate-float-custom">
+              <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-cyan-400 animate-float-custom">
                 <img
                   src={profilePic}
                   alt="Juma Bakari"
                   className="w-full h-full object-cover"
                 />
               </div>
+            </div>
 
-              <div className="mt-4 flex items-center gap-2 px-4 py-2 rounded-full glass-effect-custom hover-lift-custom">
-                <MapPin size={16} className="text-cyan-400" />
-                <span className="text-sm text-cyan-300">Tanzania 🇹🇿</span>
-              </div>
+            <div className="mt-4 px-4 py-2 rounded-full glass-effect-custom flex items-center gap-2">
+              <MapPin size={16} className="text-cyan-400" />
+              <span className="text-sm text-cyan-300">Tanzania 🇹🇿</span>
             </div>
           </div>
 
           {/* NAME */}
-          <div className="text-center mb-6">
-            <h1 className="text-4xl md:text-6xl font-bold">
+          <div className="flex flex-col items-center mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-center">
               <span className="text-gradient-animated">Juma Bakari</span>
             </h1>
-            <div className="h-1 w-32 mx-auto mt-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
           </div>
 
           {/* TITLE */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 px-6 py-3 rounded-full glass-effect-custom hover-lift-custom">
+            <div className="px-6 py-3 rounded-full glass-effect-custom flex items-center gap-2">
               <Briefcase size={20} className="text-cyan-400" />
               <span className="text-xl font-semibold">
                 Data Analyst & Scientist
@@ -114,14 +107,14 @@ export default function Hero() {
           </div>
 
           {/* VENTURES */}
-          <p className="text-center text-lg text-gray-300 mb-6 max-w-2xl">
-            Founder of <span className="text-cyan-400 font-semibold">EventZetu</span> •
-            Co-founder of <span className="text-cyan-400 font-semibold">ChiwawaPay</span> •
-            Founder of <span className="text-cyan-400 font-semibold">NeoAutomate Agents</span>
+          <p className="text-center text-lg text-gray-300 mb-6 max-w-xl">
+            Founder of <span className="text-cyan-400">EventZetu</span> •
+            Co-founder of <span className="text-cyan-400">ChiwawaPay</span> •
+            Founder of <span className="text-cyan-400">NeoAutomate Agents</span>
           </p>
 
           {/* BIO */}
-          <div className="mb-10 max-w-2xl text-center text-lg text-gray-300 glass-effect-custom px-6 py-6 rounded-2xl hover-lift-custom">
+          <div className="glass-effect-custom text-center max-w-xl px-6 py-6 rounded-2xl mb-10 text-lg text-gray-300">
             <span className="text-cyan-400 font-medium">
               Turning data into solutions.
             </span>{" "}
@@ -129,45 +122,42 @@ export default function Hero() {
             life simpler and more connected across Africa.
           </div>
 
-          {/* CONTACT BUTTONS */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* CONTACTS (VERTICAL) */}
+          <div className="flex flex-col items-center gap-4 mb-12">
             <a
               href="mailto:jumakitula0@gmail.com"
-              className="flex items-center gap-3 px-8 py-4 rounded-xl bg-blue-600 hover-lift-custom"
+              className="px-8 py-4 rounded-xl bg-blue-600 hover-lift-custom flex items-center gap-3"
             >
-              <Mail size={20} />
-              Email Me
+              <Mail size={20} /> Email Me
             </a>
 
             <a
               href="https://www.linkedin.com/in/juma-bakari-4712ab152"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-4 rounded-xl bg-slate-800 hover-lift-custom"
+              className="px-8 py-4 rounded-xl bg-slate-800 hover-lift-custom flex items-center gap-3"
             >
-              <Linkedin size={20} />
-              LinkedIn
+              <Linkedin size={20} /> LinkedIn
             </a>
 
             <a
               href="https://wa.me/255711813131"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-4 rounded-xl bg-green-600 hover-lift-custom"
+              className="px-8 py-4 rounded-xl bg-green-600 hover-lift-custom flex items-center gap-3"
             >
-              <MessageCircle size={20} />
-              WhatsApp
+              <MessageCircle size={20} /> WhatsApp
             </a>
           </div>
 
-          {/* STATS */}
-          <div className="flex flex-col md:flex-row gap-6 mb-16">
+          {/* STATS (VERTICAL) */}
+          <div className="flex flex-col gap-6 mb-16">
             <Stat icon={Award} value="5+" label="Years Experience" />
             <Stat icon={Briefcase} value="3" label="Ventures Founded" />
             <Stat icon={Users} value="50+" label="Projects Completed" />
           </div>
 
-          {/* SCROLL INDICATOR */}
+          {/* SCROLL */}
           <div className="flex flex-col items-center text-gray-400">
             <span className="text-sm mb-2">Scroll to explore</span>
             <div className="w-6 h-10 border border-gray-500 rounded-full flex justify-center">
@@ -181,10 +171,9 @@ export default function Hero() {
   );
 }
 
-/* STAT CARD COMPONENT */
 function Stat({ icon: Icon, value, label }) {
   return (
-    <div className="glass-effect-custom px-8 py-6 rounded-xl text-center hover-lift-custom w-64">
+    <div className="glass-effect-custom w-64 px-8 py-6 rounded-xl text-center hover-lift-custom">
       <Icon size={32} className="text-cyan-400 mx-auto mb-2" />
       <div className="text-3xl font-bold text-cyan-400">{value}</div>
       <div className="text-gray-400">{label}</div>
