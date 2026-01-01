@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-cyan-400 float bg-slate-800 flex items-center justify-center">
               {/* Fallback image path used to prevent build failure */}
               <img
-                src={profilePic}
+                src="./profile_picture.jpg";
                 alt="Juma Bakari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
